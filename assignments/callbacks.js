@@ -64,15 +64,18 @@ multiplyNums(6,6,function(multi){
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-  const newArr = list.filter(test);
-  function test(value){
-    return cb((value === item) ? true:false);
-  };
-  
+  /* 
+  // const newArr = list.filter(test);
+  // function test(value){
+  //   return value === item;
+  // };
+  */
+ 
+  return cb(list.includes(item) ? true:false);
 
 }
 
-contains("yo-yo", items, function(has){
+contains("Gum", items, function(has){
   console.log(has);
 });
 
