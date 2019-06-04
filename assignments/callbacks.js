@@ -11,6 +11,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   }
 
   // Potential Solution:
+  */
 
   // Higher order function using "cb" as the call back
   function firstItem(arr, cb) {
@@ -22,29 +23,61 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     console.log(first)
   });
 
-*/
 
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+
+getLength(items, function(length){
+  console.log(length)
+});
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length-1]);
 }
+
+last(items,function(last){
+  console.log(last);
+});
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x+y);
 }
+
+sumNums(1,4,function(sum){
+  console.log(sum);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x*y);
 }
+
+multiplyNums(6,6,function(multi){
+  console.log(multi);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  /* 
+  // const newArr = list.filter(test);
+  // function test(value){
+  //   return value === item;
+  // };
+  */
+ 
+  return cb(list.includes(item) ? true:false);
+
 }
+
+contains("Gum", items, function(has){
+  console.log(has);
+});
 
 /* STRETCH PROBLEM */
 
